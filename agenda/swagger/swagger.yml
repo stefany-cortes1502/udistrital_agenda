@@ -1,0 +1,663 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /agenda/:
+    get:
+      tags:
+      - agenda
+      description: get Agenda
+      operationId: AgendaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Agenda'
+        "403":
+          description: ""
+    post:
+      tags:
+      - agenda
+      description: create Agenda
+      operationId: AgendaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Agenda content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Agenda'
+      responses:
+        "201":
+          description: '{int} models.Agenda'
+        "403":
+          description: body is empty
+  /agenda/{id}:
+    get:
+      tags:
+      - agenda
+      description: get Agenda by id
+      operationId: AgendaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Agenda'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - agenda
+      description: update the Agenda
+      operationId: AgendaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Agenda content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Agenda'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Agenda'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - agenda
+      description: delete the Agenda
+      operationId: AgendaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /contactos/:
+    get:
+      tags:
+      - contactos
+      description: get Contactos
+      operationId: ContactosController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Contactos'
+        "403":
+          description: ""
+    post:
+      tags:
+      - contactos
+      description: create Contactos
+      operationId: ContactosController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Contactos content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Contactos'
+      responses:
+        "201":
+          description: '{int} models.Contactos'
+        "403":
+          description: body is empty
+  /contactos/{id}:
+    get:
+      tags:
+      - contactos
+      description: get Contactos by id
+      operationId: ContactosController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Contactos'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - contactos
+      description: update the Contactos
+      operationId: ContactosController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Contactos content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Contactos'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Contactos'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - contactos
+      description: delete the Contactos
+      operationId: ContactosController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /correoselectronicos/:
+    get:
+      tags:
+      - correoselectronicos
+      description: get Correoselectronicos
+      operationId: CorreoselectronicosController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Correoselectronicos'
+        "403":
+          description: ""
+    post:
+      tags:
+      - correoselectronicos
+      description: create Correoselectronicos
+      operationId: CorreoselectronicosController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Correoselectronicos content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Correoselectronicos'
+      responses:
+        "201":
+          description: '{int} models.Correoselectronicos'
+        "403":
+          description: body is empty
+  /correoselectronicos/{id}:
+    get:
+      tags:
+      - correoselectronicos
+      description: get Correoselectronicos by id
+      operationId: CorreoselectronicosController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Correoselectronicos'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - correoselectronicos
+      description: update the Correoselectronicos
+      operationId: CorreoselectronicosController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Correoselectronicos content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Correoselectronicos'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Correoselectronicos'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - correoselectronicos
+      description: delete the Correoselectronicos
+      operationId: CorreoselectronicosController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /parametros/:
+    get:
+      tags:
+      - parametros
+      description: get Parametros
+      operationId: ParametrosController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Parametros'
+        "403":
+          description: ""
+    post:
+      tags:
+      - parametros
+      description: create Parametros
+      operationId: ParametrosController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Parametros content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Parametros'
+      responses:
+        "201":
+          description: '{int} models.Parametros'
+        "403":
+          description: body is empty
+  /parametros/{id}:
+    get:
+      tags:
+      - parametros
+      description: get Parametros by id
+      operationId: ParametrosController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Parametros'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - parametros
+      description: update the Parametros
+      operationId: ParametrosController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Parametros content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Parametros'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Parametros'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - parametros
+      description: delete the Parametros
+      operationId: ParametrosController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /telefonos/:
+    get:
+      tags:
+      - telefonos
+      description: get Telefonos
+      operationId: TelefonosController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Telefonos'
+        "403":
+          description: ""
+    post:
+      tags:
+      - telefonos
+      description: create Telefonos
+      operationId: TelefonosController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Telefonos content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Telefonos'
+      responses:
+        "201":
+          description: '{int} models.Telefonos'
+        "403":
+          description: body is empty
+  /telefonos/{id}:
+    get:
+      tags:
+      - telefonos
+      description: get Telefonos by id
+      operationId: TelefonosController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Telefonos'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - telefonos
+      description: update the Telefonos
+      operationId: TelefonosController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Telefonos content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Telefonos'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Telefonos'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - telefonos
+      description: delete the Telefonos
+      operationId: TelefonosController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  models.Agenda:
+    title: Agenda
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      FechaEvento:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IdContacto:
+        $ref: '#/definitions/models.Contactos'
+  models.Contactos:
+    title: Contactos
+    type: object
+    properties:
+      Direccion:
+        type: string
+      Estado:
+        type: boolean
+      Id:
+        type: integer
+        format: int64
+      IdCargo:
+        $ref: '#/definitions/models.Parametros'
+      NombreCompleto:
+        type: string
+      NumeroDocumento:
+        type: string
+  models.Correoselectronicos:
+    title: Correoselectronicos
+    type: object
+    properties:
+      DireccionCorreo:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IdContacto:
+        $ref: '#/definitions/models.Contactos'
+  models.Parametros:
+    title: Parametros
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      TipoParametro:
+        type: string
+      ValorParametro:
+        type: string
+  models.Telefonos:
+    title: Telefonos
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      IdContacto:
+        $ref: '#/definitions/models.Contactos'
+      NumeroTelefonico:
+        type: string
+tags:
+- name: parametros
+  description: |
+    ParametrosController operations for Parametros
+- name: contactos
+  description: |
+    ContactosController operations for Contactos
+- name: telefonos
+  description: |
+    TelefonosController operations for Telefonos
+- name: correoselectronicos
+  description: |
+    CorreoselectronicosController operations for Correoselectronicos
+- name: agenda
+  description: |
+    AgendaController operations for Agenda
